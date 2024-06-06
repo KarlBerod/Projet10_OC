@@ -21,8 +21,9 @@ describe("When Events is created", () => {
           bubbles: true,
         })
       );
-      await screen.findByText("En cours");
-      await screen.findByText("Envoyer");
+      // delai implémenté avant de avant de trouver les éléments
+      await screen.findByText("En cours", {}, {timeout: 3000});
+      await screen.findByText("Envoyer",  {}, {timeout: 3000});
       expect(onSuccess).toHaveBeenCalled();
     });
   });

@@ -12,5 +12,6 @@ export const MONTHS = {
   10: "novembre",
   11: "décembre",
 };
-// changes were maid to adapt the index of the months, index 0 did not exist and caused january month to never display
+// changes were maid to adapt the index of the months, index 0 did not exist causing january month to never display 
+// and other months to be indexed by 1
 export const getMonth = (date) => MONTHS[date.getMonth()];

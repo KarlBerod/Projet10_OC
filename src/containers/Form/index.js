@@ -15,12 +15,12 @@ const Form = ({ onSuccess, onError }) => {
       // We try to call mockContactApi
       try {
         await mockContactApi();
+        onSuccess();
         setSending(false);
         // oubli de l'appel de onSuccess
-        onSuccess();
       } catch (err) {
-        setSending(false);
         onError(err);
+        setSending(false);
       }
     },
     [onSuccess, onError]
